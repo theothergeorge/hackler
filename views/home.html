@@ -17,13 +17,15 @@
 
 	<p><a href="/results">See the current results</a></p>
 
-	<p><a href="/presentations">Change presentation order</a></p>
+	<p><a class="adminOnly" href="/presentations">Change presentation order</a></p>
 
-	<p><a href="/demos">Start demos</a></p>
+	<p><a class="adminOnly" href="/demos">Start demos</a></p>
 </center>
 
 
-
+	<script type="text/javascript">
+	window.user = {{{ json user }}};
+	</script>
 	<script type="text/javascript" src="/scripts/jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="/scripts/home.js"></script>
 </body>

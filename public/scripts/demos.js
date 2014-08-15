@@ -1,5 +1,5 @@
 var timerTimer;
-var timeOut = 60;
+var timeOut = 180;
 var currentTime;
 var paused = false;
 var currentOrder = 0;

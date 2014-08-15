@@ -1,6 +1,10 @@
 $(document).ready(function() {
-	var presentations = window.presentations;
 
+	var presentations = window.presentations;
+    if (presentations.length == 0) {
+        // empty, bootstrap with team first
+        presentations = teams;
+    }
     $( "#presentationList" ).sortable();
     $( "#presentationList" ).disableSelection();
 
@@ -17,7 +21,9 @@ $(document).ready(function() {
     	var children = container.children();
     	for (var i = 0; i < container.children().length; i++) {
     		var teamId = $(children[i]).attr('id');
+            var teamName = $('span', children[i]).text();
     		order.push({
+                name: teamName,
     			teamId: window.parseInt(teamId),
     			order: i
     		});

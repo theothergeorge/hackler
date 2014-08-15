@@ -1,18 +1,4 @@
-function generateRandomData() {
-	var data = [];
-	for (var i = 0; i < 10; i++) {
-		var votes = Math.floor(Math.random() * 10);
-		data.push({
-			id : i,
-			name: "Team " + i,
-			members: ["alagu@bluejeansnet.com"]
-		});
-	}
-	return data;
-}
-
-var teams = generateRandomData();
-
+var teams = window.teams;
 var user = window.user;
 
 function removeNumber(el) {
@@ -84,7 +70,7 @@ $(document).ready(function(){
 		if (!_.contains(team.members, user.email)) {
 			var teamDiv = $('<div/>', {
 				class: 'team',
-				id: team.id
+				id: team.teamId
 			});
 			var textDiv = $('<div/>', {
 				class: 'text',

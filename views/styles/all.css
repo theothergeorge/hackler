@@ -3,6 +3,18 @@ body {
   margin: 0px;
   font-family: Helvetica;
 }
+.voteInstructions {
+  padding: 20px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.voteInstructions button {
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+}
 .teamsContainer {
   width: 100%;
   height: 100%;

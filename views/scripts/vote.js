@@ -57,12 +57,26 @@ function teamSelected(evt) {
 	}
 }
 
+function submitVotes() {
+	var blocks = $('.block.selected');
+	if (blocks.length < 3) {
+		alert('Please cast all 3 votes');
+	} else {
+		_.each(blocks, function(el) {
+			var teamId = $(el).parent().attr('id');
+			console.log("Submitting one vote for team " + teamId
+				+ " on behalf of " + user.email);
+		});
+	}
+}
+
 $(document).ready(function(){
 	var container = $('.teamsContainer');
 	_.each(_.sortBy(teams, 'name'), function(team){
 		if (!_.contains(team.members, user.email)) {
 			var teamDiv = $('<div/>', {
-				class: 'team team' + team.id
+				class: 'team',
+				id: team.id
 			});
 			var textDiv = $('<div/>', {
 				class: 'text',
@@ -86,4 +100,5 @@ $(document).ready(function(){
 		}
 	});
 	$('.team').on('click tap', teamSelected);
+	$('.submitVotes').on('click tap', submitVotes);
 });

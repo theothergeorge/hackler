@@ -1,14 +1,87 @@
 body {
 	padding: 0px;
 	margin: 0px;
+	font-family: Helvetica;
 }
+
+@teamsTextSize: 25px;
+.teamsContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	.team {
+		position:relative;
+		height: 2 * @teamsTextSize + 15px;
+		background-color: white;
+		border-bottom: 1px solid white;
+		width:100%;
+		&.selected {
+			.text {
+				background-color: green;	
+			}
+		}
+		.text {
+			float: left;
+			width: 60%;
+			color: #eee;
+			background-color: grey;
+			height: 100%;
+			text-align: center;
+			top: 10px;
+			font-size: @teamsTextSize - 5;
+		}
+		.block {
+			float:left;
+			border-left: 1px solid white;
+			width: 9%;
+			background-color: green;
+			height: 100%;
+			visibility: hidden;
+
+			&.selected {
+				visibility: visible;
+			}
+		}
+		.removeBlock {
+			float:left;
+			border-left: 1px solid white;
+			width: 9%;
+			height: 100%;
+			background-color: red;
+			font-size: 50px;
+			text-align: center;
+			color: white;
+			font-weight: bold;
+		}
+	}
+
+	
+}
+
+
+@homeButtonText: 50px;
+div.homeButtonContainer {
+	position:relative;
+	width: 100%;
+	height: 20%;
+	font-size: 20px;
+	height: @homeButtonText;
+	top: 50%;
+	margin-top: -0.5 * @homeButtonText;
+	a {
+		position: aboslute;
+		height: 100%;
+		width: 100%;
+		font-size: 20px;
+	}
+}
+
 .votesContainer {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
 @textHeight: 20px;
-
 .barWrapper {
 	float:left;
 	width: 100%;
@@ -25,7 +98,7 @@ body {
 		position: absolute;
 		margin-top: -0.5 * @textHeight;
 		height: @textHeight;
-		color: #fff;
+		color: #eee;
     	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 	}
 	.votesText {
@@ -34,7 +107,7 @@ body {
 		right: 50px;
 		margin-top: -0.5 * @textHeight;
 		height: @textHeight;
-   		color: #fff;
+   		color: #eee;
     	text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 	}
 }

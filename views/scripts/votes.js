@@ -30,7 +30,7 @@ function renderData(data) {
 	var height = maxDimension / numOfTeams;
 	var maxVotes = _.max(data, "votes").votes;
 
-	_.each(_.sortBy(data, 'id'), function(team){
+	_.each(_.sortBy(data, 'name'), function(team){
 		var width = team.votes / maxVotes * maxDimension;
 		var votesString = team.votes + " votes";
 		var existingBar = $('.votesContainer .barWrapper.team'+team.id);

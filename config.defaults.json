@@ -4,6 +4,9 @@
 		"admins": []
 	},
 	"db": {
+		"host": "localhost",
+		"port": 27017,
+		"name": "hacklerdb"
 	},
 	"httpServer": {
 		"port": 8080,

@@ -26,7 +26,7 @@ function getRandomColor() {
 
 function renderData(data) {
 	var container = $('.votesContainer');
-	var numOfTeams = data.length;
+	var numOfTeams = Object.keys(data).length;
 	var height = maxDimension / numOfTeams;
 	var maxVotes = _.max(data, "votes").votes;
 
@@ -49,9 +49,20 @@ function renderData(data) {
 		}
 	});
 }
+
+function getVotes() {
+	$.ajax({
+		url: "/api/votes",
+		type: "GET",
+		success: function(data) {
+			renderData(data);
+		}
+	});
+}
+
 $(document).ready(function(){
-	renderData(generateRandomData());
+	getVotes();
 	window.setInterval(function(){
-		renderData(generateRandomData());
+		getVotes();
 	}, 1000);
 });

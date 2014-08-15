@@ -1,0 +1,38 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+.votesContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.barWrapper {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.barWrapper .bar {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 100%;
+}
+.barWrapper .text {
+  top: 50%;
+  left: 10px;
+  position: absolute;
+  margin-top: -10px;
+  height: 20px;
+  color: #fff;
+  text-shadow: 1px 0 0 #000000, 0 -1px 0 #000000, 0 1px 0 #000000, -1px 0 0 #000000;
+}
+.barWrapper .votesText {
+  top: 50%;
+  position: absolute;
+  right: 50px;
+  margin-top: -10px;
+  height: 20px;
+  color: #fff;
+  text-shadow: 1px 0 0 #000000, 0 -1px 0 #000000, 0 1px 0 #000000, -1px 0 0 #000000;
+}

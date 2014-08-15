@@ -35,8 +35,10 @@ function renderData(data) {
 		var votesString = team.votes + " votes";
 		var existingBar = $('.votesContainer .barWrapper.team'+team.id);
 		if (existingBar.length > 0) {
+			existingBar.animate({height: height + "%"});
 			$('.bar', existingBar).animate({width: width + "%"});
 			$('.votesText', existingBar).text(votesString);
+			existingBar.addClass('edited');
 		} else {
 			var color = getRandomColor();
 			var barWrapper = $('<div/>', { class: "barWrapper team" + team.id})
@@ -46,8 +48,12 @@ function renderData(data) {
 				.css({ width: width + '%', backgroundColor: color });
 			var votesText = $('<div/>', { class: 'votesText', text: votesString});
 			container.append(barWrapper.append(bar, text, votesText));
+			barWrapper.addClass('edited');
 		}
 	});
+	console.log($('.barWrapper:not(.edited)').length);
+	$('.barWrapper:not(.edited)').remove();
+	$('.barWrapper').removeClass('edited');
 }
 
 function getVotes() {

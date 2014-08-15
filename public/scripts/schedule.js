@@ -8,7 +8,9 @@ function getTimeString(time) {
 }
 
 $(document).ready(function() {
-	var presentations = window.presentations;
+	var presentations = _.sortBy(window.presentations, function(presentation){
+        return parseInt(presentation.order);
+    });
 
 	var container = $('#scheduleList');
     for (var i =0; i < presentations.length; i++) {

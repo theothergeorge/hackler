@@ -22,6 +22,7 @@ $(document).ready(function() {
     	for (var i = 0; i < container.children().length; i++) {
     		var teamId = $(children[i]).attr('id');
             var teamName = $('span', children[i]).text();
+            console.log("pusing order " + i + "for team " + teamName);
     		order.push({
                 name: teamName,
     			teamId: window.parseInt(teamId),
@@ -34,7 +35,7 @@ $(document).ready(function() {
     		dataType: "json",
             data: { presentations: order },
     		success: function(data) {
-    			window.location.href = "/home";
+    			//window.location.href = "/home";
     		}
     	});
     });

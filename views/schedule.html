@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Presentation Schedule</title>
+	<link href="/styles/all.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/scripts/jquery-ui.css">
+</head>
+<body>
+	<div>
+		Here is the approximate presentation schedule.  Note that all time are approximate but we will try to stay on schedule
+	</div>
+	<div class='schedule'>
+		<ul id="scheduleList"></ul>
+	</div>
+	<script type="text/javascript">
+	window.user = {{{ json user }}};
+	//window.presentations = {{{ json presentations }}};
+	window.presentations = [{
+		name: "Team 1",
+		teamId: 1,
+		order: 0
+	}, {
+		name: "Team 2",
+		teamId: 2,
+		order: 1
+	}, {
+		name: "Team 3",
+		teamId: 3,
+		order: 2		
+	}];
+	</script>
+	
+	<script type="text/javascript" src="/scripts/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="/scripts/lodash.js"></script>
+	<script type="text/javascript" src="/scripts/schedule.js"></script>
+</body>
+
+</html>

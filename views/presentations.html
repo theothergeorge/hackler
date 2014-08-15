@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Order and rank</title>
+	<link href="/styles/all.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/scripts/jquery-ui.css">
+</head>
+<body>
+	<div>
+		Drag and drop to reorder presentation order<br/>
+		<button class="savePresentation">Save Presentation Order</button>
+	</div>
+	<div class='presentationContainer'>
+		<ol id="presentationList"></ol>
+	</div>
+	<script type="text/javascript">
+	window.user = {{{ json user }}};
+	//window.presentations = {{{ json presentations }}};
+	window.presentations = [{
+		name: "Team 1",
+		teamId: 1,
+		order: 0
+	}, {
+		name: "Team 2",
+		teamId: 2,
+		order: 1
+	}, {
+		name: "Team 3",
+		teamId: 3,
+		order: 2		
+	}];
+	</script>
+	
+	<script type="text/javascript" src="/scripts/jquery-2.1.1.js"></script>
+	<script type="text/javascript" src="/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/scripts/lodash.js"></script>
+	<script type="text/javascript" src="/scripts/presentations.js"></script>
+</body>
+
+</html>

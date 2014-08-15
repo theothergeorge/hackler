@@ -3,6 +3,11 @@ body {
   margin: 0px;
   font-family: Helvetica;
 }
+.presentationContainer li {
+  height: 25px;
+  border: 1px dotted black;
+  margin-bottom: 10px;
+}
 .voteInstructions {
   padding: 20px;
   font-size: 30px;

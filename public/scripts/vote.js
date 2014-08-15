@@ -5,18 +5,13 @@ function generateRandomData() {
 		data.push({
 			id : i,
 			name: "Team " + i,
-			members: ["luke@bluejeansnet.com", "alagu@bluejeansnet.com"]
+			members: ["alagu@bluejeansnet.com"]
 		});
 	}
 	return data;
 }
 
 var teams = generateRandomData();
-
-//test data:
-window.user = {
-	email: "luke@lukema.net"
-};
 
 var user = window.user;
 
@@ -62,11 +57,24 @@ function submitVotes() {
 	if (blocks.length < 3) {
 		alert('Please cast all 3 votes');
 	} else {
+		var votes = [];
 		_.each(blocks, function(el) {
 			var teamId = $(el).parent().attr('id');
-			console.log("Submitting one vote for team " + teamId
-				+ " on behalf of " + user.email);
+			votes.push({
+				email: user.email,
+				teamId : teamId
+			});
 		});
+		$.ajax({
+			url : "/api/votes",
+			data: { email: user.email, votes: votes},
+			dataType: "json",
+			type: "POST",
+			success: function(data) {
+				alert('Thanks for voting!');
+				window.location.href="/home";
+			}
+		})
 	}
 }
 

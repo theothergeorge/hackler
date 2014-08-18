@@ -55,7 +55,9 @@ function showPresentation(index) {
 }
 
 $(document).ready(function() {
-	presentations = _.sortBy(window.presentations, 'order');
+	presentations = _.sortBy(window.presentations, function(presentation) {
+		return parseInt(presentation.order);
+	});
 	// Set up first slide
 	showPresentation(0);
 

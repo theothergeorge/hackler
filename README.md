@@ -13,6 +13,7 @@ Tools for running hackathons including:
 ## Setting up hackler
 Pull down repo
 > npm install
+
 > node index.js
 
 ## Config

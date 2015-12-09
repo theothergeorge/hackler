@@ -1,7 +1,8 @@
 
 {
 	"auth": {
-		"admins": ["luke@bluejeansnet.com", "alagu@bluejeansnet.com"]
+		"admins": ["luke@bluejeansnet.com", "alagu@bluejeansnet.com"],
+		"domains": ["bluejeansnet.com","bluejeans.com"]
 	},
 	"db": {
 		"host": "localhost",
